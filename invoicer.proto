@@ -1,0 +1,26 @@
+syntax = "proto3";
+option go_package = "github.com/varun-muthanna/grpc/invoicer"; 
+
+message Address {
+    string Source = 1;
+    string Destination = 2; 
+}
+
+message Content{
+    Address add = 1;
+
+    int64 Content1 = 2;
+    string Content2 = 3;
+}
+
+message Result{
+    bytes B = 1;
+    repeated int64 Arr  = 2;
+}
+
+service Invoicer {
+    rpc DefaultInvoicer(Content) returns (Result);
+}
+
+
+
